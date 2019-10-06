@@ -23,6 +23,15 @@ int turn;
 
 int main() {
 
+	for (int y = 0; y < boardHight; y++) {
+
+		for (int x = 0; x < boardWidth; x++) {
+
+			cells[y][x] = colorNone;
+
+		}
+
+	}
 
 	while (true) {
 
@@ -32,11 +41,9 @@ int main() {
 
 			for (int x = 0; x < boardWidth; x++) {
 
-				if (x == cursorX && y == cursorY) {
-
+				if (cursorY == y && cursorX == x) {
 
 					cout << "◎";
-
 				}
 
 				else {
@@ -49,38 +56,30 @@ int main() {
 
 					case colorWhite: cout << "○"; break;
 
-					default: break;
-
 					}
 
 				}
 
-				cout << "\n";
 
 			}
 
-			cout << colorNames[turn] << " turn.\n";
+			cout << "\n";
 
-			switch (_getch()) {
+		}
 
-			case 'w': cursorY--; break;
+		switch (_getch()) {
 
-			case 's': cursorY++; break;
+		case 'w': cursorY--; break;
 
-			case 'a': cursorX--; break;
+		case 's': cursorY++; break;
 
-			case 'd': cursorX++; break;
+		case 'a': cursorX--; break;
 
-			default:
+		case 'd': cursorX++; break;
 
-				cells[cursorY][cursorX] = turn;
-
-				break;
-
-			}
+		default: break;
 
 		}
 
 	}
-
 }
