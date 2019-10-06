@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <conio.h>
 #include <string>
 
@@ -23,14 +23,6 @@ int turn;
 
 int main() {
 
-	for (int y = 0; y < boardHight; y++) {
-
-		for (int x = 0; x < boardWidth; x++) {
-
-			cells[y][x] = colorNone;
-
-		}
-	}
 
 	while (true) {
 
@@ -42,7 +34,8 @@ int main() {
 
 				if (x == cursorX && y == cursorY) {
 
-					cout << "";
+
+					cout << "â—Ž";
 
 				}
 
@@ -50,43 +43,43 @@ int main() {
 
 					switch (cells[y][x]) {
 
-					case colorNone: cout << "E"; break;
+					case colorNone: cout << "ãƒ»"; break;
 
-					case colorBlack: cout << "œ"; break;
+					case colorBlack: cout << "â—"; break;
 
-					case colorWhite: cout << "›"; break;
+					case colorWhite: cout << "â—‹"; break;
+
+					default: break;
 
 					}
 
 				}
 
+				cout << "\n";
+
 			}
 
-			cout << "\n";
+			cout << colorNames[turn] << " turn.\n";
+
+			switch (_getch()) {
+
+			case 'w': cursorY--; break;
+
+			case 's': cursorY++; break;
+
+			case 'a': cursorX--; break;
+
+			case 'd': cursorX++; break;
+
+			default:
+
+				cells[cursorY][cursorX] = turn;
+
+				break;
+
+			}
 
 		}
-
-		cout << colorNames[turn] << " turn.\n";
-
-
-		switch (_getch()) {
-
-		case 'w': cursorY--; break;
-
-		case 's': cursorY++; break;
-
-		case 'a': cursorX--; break;
-
-		case 'd': cursorX++; break;
-
-		default:
-			
-			cells[cursorY][cursorX] = turn;
-			
-			break;
-
-		}
-		
 
 	}
 
