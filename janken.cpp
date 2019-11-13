@@ -5,12 +5,15 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
+#include <string>
 
 using namespace std;
 
+const char ROCK = 1, PAPER = 2, SCISSORS = 3;
+
 int main()
-{
-	const int 
+{	
+	int playerHand, comHand;
 	
 	unsigned seed = time(0);
 	srand(seed);
@@ -35,8 +38,13 @@ int main()
 	system("cls");*/
 
 	cout << "\n"
-		<< "Please enter a number! ";
-	cin >> 
+		<< "Please enter a number of the hand which you want to show!: ";
+	cin >> playerHand;
+	cin.ignore(1024, '\n');
+
+	switch (playerHand)
+	{
+		case ROCK : 
 
 	return 0;
 }
