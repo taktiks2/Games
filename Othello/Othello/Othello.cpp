@@ -13,6 +13,31 @@ enum {
 	colorMax
 };
 
+enum {
+	dirUp,
+	dirUpLeft,
+	dirLeft,
+	dirDownLeft,
+	dirDown,
+	dirDownRight,
+	dirRight,
+	dirUpRight,
+	dirMax
+};
+
+int directions[][2]{
+
+	{0,-1},//dirUp
+	{-1,-1},//dirUpLeft
+	{-1,0},//dirLeft
+	{-1,1},//dirDownLeft
+	{0,1},//dirDown
+	{1,1},//dirDownRight
+	{1,0},//dirRight
+	{1,-1}//dirUpRight
+
+};
+
 string colorNames[2] = { "Black", "White" };
 
 int cells[boardHight][boardWidth];
@@ -20,6 +45,26 @@ int cells[boardHight][boardWidth];
 int cursorX, cursorY;
 
 int turn;
+
+bool cantPut = false;
+
+bool checkCanPut(int _color, int _x, int _y) {
+	
+	if (cells[_y][_x] != colorNone) {
+
+		return false;
+
+	}
+
+	for (int i = 0; i < dirMax; i++) {
+
+		int x = _x, y = _y;
+
+	}
+
+	return true;
+
+}
 
 int main() {
 
@@ -29,9 +74,13 @@ int main() {
 
 			cells[y][x] = colorNone;
 
+			cells[3][3] = cells[4][4] = colorWhite;
+
+			cells[4][3] = cells[3][4] = colorBlack;
+
 		}
 
-	}
+	} 
 
 	while (true) {
 
@@ -52,9 +101,9 @@ int main() {
 
 					case colorNone: cout << "・"; break;
 
-					case colorBlack: cout << "●"; break;
+					case colorBlack: cout << "○"; break;
 
-					case colorWhite: cout << "○"; break;
+					case colorWhite: cout << "●"; break;
 
 					}
 
@@ -67,6 +116,19 @@ int main() {
 
 		}
 
+		if (cantPut) {
+
+			cout << "Can't put!\n";
+		}
+
+		else {
+
+			cout << colorNames[turn] << " turn.\n";
+
+		}
+
+		cantPut = false;
+
 		switch (_getch()) {
 
 		case 'w': cursorY--; break;
@@ -77,7 +139,19 @@ int main() {
 
 		case 'd': cursorX++; break;
 
-		default: break;
+		default:
+
+			if (!checkCanPut(turn, cursorX, cursorY)) {
+
+				cantPut = true;
+
+				break; 
+
+			}
+			
+			cells[cursorY][cursorX] = turn;
+
+			turn ^= 1;
 
 		}
 
