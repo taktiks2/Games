@@ -29,7 +29,6 @@ enum {
 };
 
 const int MINO_HEIGHT = 4, MINO_WIDTH = 4;
-
 char minoShapes[MINO_TYPE_MAX][MINO_ANGLE_MAX][MINO_HEIGHT][MINO_WIDTH] = {
     { // MINO_TYPE_I
 		{ // MINO_ANGLE_0
@@ -50,7 +49,7 @@ char minoShapes[MINO_TYPE_MAX][MINO_ANGLE_MAX][MINO_HEIGHT][MINO_WIDTH] = {
 			0, 0, 1, 0,
 			0, 0, 1, 0
 		},
-		{ // MINO_ANGLE_90
+		{ // MINO_ANGLE_270
 			0, 0, 0, 0,
 			1, 1, 1, 1,
 			0, 0, 0, 0,
@@ -76,7 +75,7 @@ char minoShapes[MINO_TYPE_MAX][MINO_ANGLE_MAX][MINO_HEIGHT][MINO_WIDTH] = {
 			0, 1, 1, 0,
 			0, 0, 0, 0
 		},
-		{ // MINO_ANGLE_90
+		{ // MINO_ANGLE_270
 			0, 0, 0, 0,
 			0, 1, 1, 0,
 			0, 1, 1, 0,
@@ -92,124 +91,124 @@ char minoShapes[MINO_TYPE_MAX][MINO_ANGLE_MAX][MINO_HEIGHT][MINO_WIDTH] = {
 		},
 		{ // MINO_ANGLE_90
 			0, 0, 0, 0,
-			0, 0, 0, 0,
-			1, 1, 1, 1,
-			0, 0, 0, 0
-		},
-		{ // MINO_ANGLE_180
-			0, 0, 1, 0,
-			0, 0, 1, 0,
-			0, 0, 1, 0,
+			0, 1, 0, 0,
+			0, 1, 1, 0,
 			0, 0, 1, 0
 		},
-		{ // MINO_ANGLE_90
+		{ // MINO_ANGLE_180
 			0, 0, 0, 0,
-			1, 1, 1, 1,
-			0, 0, 0, 0,
+			0, 0, 1, 1,
+			0, 1, 1, 0,
+			0, 0, 0, 0
+		},
+		{ // MINO_ANGLE_270
+			0, 1, 0, 0,
+			0, 1, 1, 0,
+			0, 0, 1, 0,
 			0, 0, 0, 0
 		},
 	},
-    { // MINO_TYPE_I
+    { // MINO_TYPE_Z
 		{ // MINO_ANGLE_0
-			0, 1, 0, 0,
-			0, 1, 0, 0,
-			0, 1, 0, 0,
-			0, 1, 0, 0
+			0, 0, 0, 0,
+			0, 1, 1, 0,
+			0, 0, 1, 1,
+			0, 0, 0, 0
 		},
 		{ // MINO_ANGLE_90
-			0, 0, 0, 0,
-			0, 0, 0, 0,
-			1, 1, 1, 1,
+			0, 0, 1, 0,
+			0, 1, 1, 0,
+			0, 1, 0, 0,
 			0, 0, 0, 0
 		},
 		{ // MINO_ANGLE_180
+			0, 0, 0, 0,
+			1, 1, 0, 0,
+			0, 1, 1, 0,
+			0, 0, 0, 0
+		},
+		{ // MINO_ANGLE_270
+			0, 0, 0, 0,
+			0, 0, 1, 0,
+			0, 1, 1, 0,
+			0, 1, 0, 0
+		},
+	},
+    { // MINO_TYPE_J
+		{ // MINO_ANGLE_0
 			0, 0, 1, 0,
 			0, 0, 1, 0,
-			0, 0, 1, 0,
-			0, 0, 1, 0
+			0, 1, 1, 0,
+			0, 0, 0, 0
 		},
 		{ // MINO_ANGLE_90
 			0, 0, 0, 0,
-			1, 1, 1, 1,
+			1, 1, 1, 0,
+			0, 0, 1, 0,
+			0, 0, 0, 0
+		},
+		{ // MINO_ANGLE_180
 			0, 0, 0, 0,
+			0, 1, 1, 0,
+			0, 1, 0, 0,
+			0, 1, 0, 0
+		},
+		{ // MINO_ANGLE_270
+			0, 0, 0, 0,
+			0, 1, 0, 0,
+			0, 1, 1, 1,
 			0, 0, 0, 0
 		},
 	},
-    { // MINO_TYPE_I
+    { // MINO_TYPE_L
 		{ // MINO_ANGLE_0
 			0, 1, 0, 0,
 			0, 1, 0, 0,
-			0, 1, 0, 0,
-			0, 1, 0, 0
+			0, 1, 1, 0,
+			0, 0, 0, 0
 		},
 		{ // MINO_ANGLE_90
 			0, 0, 0, 0,
-			0, 0, 0, 0,
-			1, 1, 1, 1,
+			0, 0, 1, 0,
+			1, 1, 1, 0,
 			0, 0, 0, 0
 		},
 		{ // MINO_ANGLE_180
-			0, 0, 1, 0,
-			0, 0, 1, 0,
+			0, 0, 0, 0,
+			0, 1, 1, 0,
 			0, 0, 1, 0,
 			0, 0, 1, 0
 		},
-		{ // MINO_ANGLE_90
+		{ // MINO_ANGLE_270
 			0, 0, 0, 0,
-			1, 1, 1, 1,
-			0, 0, 0, 0,
+			0, 1, 1, 1,
+			0, 1, 0, 0,
 			0, 0, 0, 0
 		},
 	},
-    { // MINO_TYPE_I
+    { // MINO_TYPE_T
 		{ // MINO_ANGLE_0
+			0, 0, 0, 0,
 			0, 1, 0, 0,
-			0, 1, 0, 0,
-			0, 1, 0, 0,
-			0, 1, 0, 0
+			1, 1, 1, 0,
+			0, 0, 0, 0
 		},
 		{ // MINO_ANGLE_90
 			0, 0, 0, 0,
-			0, 0, 0, 0,
-			1, 1, 1, 1,
-			0, 0, 0, 0
-		},
-		{ // MINO_ANGLE_180
 			0, 0, 1, 0,
-			0, 0, 1, 0,
-			0, 0, 1, 0,
+			0, 1, 1, 0,
 			0, 0, 1, 0
 		},
-		{ // MINO_ANGLE_90
-			0, 0, 0, 0,
-			1, 1, 1, 1,
-			0, 0, 0, 0,
-			0, 0, 0, 0
-		},
-	},
-    { // MINO_TYPE_I
-		{ // MINO_ANGLE_0
-			0, 1, 0, 0,
-			0, 1, 0, 0,
-			0, 1, 0, 0,
-			0, 1, 0, 0
-		},
-		{ // MINO_ANGLE_90
-			0, 0, 0, 0,
-			0, 0, 0, 0,
-			1, 1, 1, 1,
-			0, 0, 0, 0
-		},
 		{ // MINO_ANGLE_180
+			0, 0, 0, 0,
+			0, 1, 1, 1,
 			0, 0, 1, 0,
-			0, 0, 1, 0,
-			0, 0, 1, 0,
-			0, 0, 1, 0
+			0, 0, 0, 0
 		},
-		{ // MINO_ANGLE_90
-			0, 0, 0, 0,
-			1, 1, 1, 1,
-			0, 0, 0, 0,
+		{ // MINO_ANGLE_270
+			0, 1, 0, 0,
+			0, 1, 1, 0,
+			0, 1, 0, 0,
 			0, 0, 0, 0
 		},
 	},
@@ -220,10 +219,13 @@ int minoType = 0, minoAngle = 0;
 
 void display();
 bool isHit(int tempY, int tempX, int tempType, int tempAngle); 
+void resetMino();
 
 int main(){
 	// Inisialize field
 	memset(field, 0, sizeof(field));
+
+	srand(time(NULL));
 
 	// Make wall
 	for (int axisY = 0; axisY < FIELD_HEIGHT; axisY++) {
@@ -232,6 +234,8 @@ int main(){
 	for (int axisX = 0; axisX < FIELD_WIDTH; axisX++) {
 		field[FIELD_HEIGHT - 1][axisX] = 1;
 	}
+
+	resetMino();
 
 	time_t t = time(NULL);
 	
@@ -257,7 +261,6 @@ int main(){
 			}
 			display();
 		}
-
 		if (t != time(NULL)) {
 			t = time(NULL);
 
@@ -267,17 +270,26 @@ int main(){
 						field[minoY + axisY][minoX + axisX] |= minoShapes[minoType][minoAngle][axisY][axisX];
 					}
 				}
-				minoY = 0;
-				minoX = 5;
-				minoType = rand() % MINO_TYPE_MAX;
-				minoAngle = rand() % MINO_ANGLE_MAX;
+				for (int axisY = 0; axisY < FIELD_HEIGHT - 1; axisY++) {
+					bool lineFill = true;
+					for (int axisX = 1; axisX < FIELD_WIDTH - 1; axisX++) {
+						if (!field[axisY][axisX]) {
+							lineFill = false;
+						}
+					}	
+					if (lineFill) {
+						for (int axisX = axisY; 0 < axisX; axisX--) {
+							memcpy(field[axisX], field[axisX - 1], FIELD_WIDTH);
+						}
+					}
+				}
+				resetMino();
 			} else {
 				minoY++;
 			}
 			display();
 		}
 	}
-	_getch();
 	return 0;
 }
 
@@ -309,4 +321,11 @@ bool isHit(int tempY, int tempX, int tempType, int tempAngle) {
 		}
 	}
 	return false;
+}
+
+void resetMino() {
+	minoY = 0;
+	minoX = 5;
+	minoType = rand() % MINO_TYPE_MAX;
+	minoAngle = rand() % MINO_ANGLE_MAX;
 }
